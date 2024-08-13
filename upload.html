@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carica Documento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ecf39e;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 600px; /* Limita la larghezza del modulo */
+            box-sizing: border-box; /* Include il padding e il bordo nella larghezza */
+            margin: 0 auto; /* Centra il modulo orizzontalmente */
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            text-align: left; /* Allinea il testo a sinistra */
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="url"], 
+        .form-group select {
+            width: 100%; /* Occupa tutta la larghezza disponibile */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include il padding e il bordo nella larghezza */
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto; /* Centra il bottone orizzontalmente */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carica un Nuovo Documento o Decreto</h1>
+    <form action="{{ url_for('upload_link') }}" method="POST">
+        <div class="form-group">
+            <label for="title">Titolo:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="link">Link del Documento:</label>
+            <input type="url" id="link" name="link" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="category">Categoria:</label>
+            <select id="category" name="category" required>
+                <option value="documento">Documento</option>
+                <option value="decreto">Decreto</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="office">Ufficio:</label>
+            <select id="office" name="office" required>
+                <option value="Prefettura di Roma">Prefettura di Roma</option>
+                <option value="Ufficio Sicurezza Pubblica">Ufficio Sicurezza Pubblica</option>
+                <option value="Ufficio Vigilanza e Controllo">Ufficio Vigilanza e Controllo</option>
+                <option value="Ufficio Gabinetto">Ufficio Gabinetto</option>
+                <option value="Ufficio Affari Legali">Ufficio Affari Legali</option>
+                <option value="Ufficio Enti Locali">Ufficio Enti Locali</option>
+                <option value="Ufficio Sicurezza Stradale">Ufficio Sicurezza Stradale</option>
+            </select>
+        </div>
+        
+        <button type="submit">Carica Documento</button>
+    </form>
+</body>
+</html>
+

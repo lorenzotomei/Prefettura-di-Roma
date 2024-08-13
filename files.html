@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albo Pretorio Prefettura</title>
+    <style>
+        body {
+            font-family: verdana, sans-serif;
+            padding: 20px;
+            margin: 0;
+            background-color: #8cc2ff;
+            box-sizing: border-box;
+        }
+        .info-container {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background: #e5f8f7;
+            font-family: verdana;
+            padding: 15px;
+            border: 3px solid #000000;
+            border-radius: 5px;
+            margin-right: 20px;
+            text-align: left;
+            max-width: 70%; /* Reduced width */
+            box-sizing: border-box;
+            font-size: 18px;
+            position: relative; /* For positioning purposes */
+        }
+        .info-image {
+            width: auto; /* Maintain aspect ratio */
+            max-width: 600px; /* Set a maximum width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 364px; /* Set a maximum height */
+            object-fit: cover; /* Ensure image covers its container */
+            margin-left: 232px;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .section {
+            flex: 1;
+            background: #ffffff;
+            padding: 20px;
+            border: 3px solid #000000;
+            border-radius: 5px;
+            box-sizing: border-box;
+            max-width: 50%;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 18px;
+            margin-bottom: 30px;
+            font-family: verdana, sans-serif; /* Set font to Calibri */
+            font-size: 36px; /* Make the title larger */
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .file-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            font-size: 18px;
+            border: 1px solid #4f4f4f;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .file-item p {
+            margin: 10px 0;
+            text-align: left;
+        }
+        .file-item .button-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .file-item button {
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .view-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .view-button:hover {
+            background-color: #45a049;
+        }
+        .home-button {
+            display: block;
+            width: 230px;
+            margin: 30px auto;
+            padding: 20px 30px;
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ecf39e;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+        .home-button:hover {
+            background-color: #d3e88f; /* Slightly darker on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Visualizza i File della Prefettura di Roma</h1>
+
+    <!-- Riquadro per aggiungere informazioni -->
+    <div class="info-container">
+        <div class="info-box">
+            <p><strong>Benvenuti nel sito dell'Albo Pretorio della Prefettura di Roma. Questo sito è dedicato alla pubblicazione e alla consultazione di tutti i documenti ufficiali emessi dalla Prefettura di Roma. L'Albo Pretorio online permette a cittadini, professionisti e istituzioni di accedere facilmente ai documenti e ai decreti pubblicati dalla Prefettura, garantendo trasparenza e accesso alle informazioni di pubblica rilevanza.<br><br></strong>
+
+            <em>La Prefettura di Roma è l'organo amministrativo che rappresenta il governo centrale nella capitale. Il Prefetto, attualmente il Dott. Ti Breadford, è il massimo responsabile dell'ufficio e coordina le attività della Prefettura. Al suo fianco operano i Vice Prefetti, tra cui il Vice Prefetto Vicario Francesco Franco, il Vice Prefetto Lorenzo Rossi, il Vice Prefetto Aggiunto Giulio Bianchi e Francesco Mangiagatti. Questi funzionari svolgono un ruolo cruciale nel supportare il Prefetto e nella gestione delle attività quotidiane dell'ufficio.<br>
+            
+            In aggiunta, la Prefettura di Roma conta su un team di ispettori altamente qualificati, ognuno con specifiche competenze e responsabilità. Gli ispettori sono incaricati di monitorare e garantire l'applicazione delle normative, assicurando la sicurezza pubblica e il rispetto delle leggi. Il loro lavoro contribuisce a mantenere l'ordine e a supportare le iniziative del governo locale e centrale.<br><br></em>
+            
+            <strong>Il nostro sito fornisce una piattaforma trasparente per la visualizzazione di documenti importanti come decreti, avvisi e altri documenti ufficiali. È uno strumento essenziale per chiunque abbia bisogno di accedere alle informazioni pubbliche gestite dalla Prefettura di Roma. Se hai domande o necessiti di ulteriori informazioni, non esitare a contattarci attraverso i canali ufficiali della Prefettura.</strong><br>
+            </p>
+        </div>
+        <img src="https://cdn.discordapp.com/attachments/1176919638194520064/1267973285908582502/logo_prefettura_roma.png?ex=66bc87e5&is=66bb3665&hm=356a503af4c4f113ccb303291f6022b23ad1a6474a63ae78f5c697e2d8e094bc&" alt="Logo Prefettura Roma" class="info-image">
+    </div>
+
+    <div class="container">
+        <!-- Sezione Documenti -->
+        <div class="section">
+            <h2>Documenti della Prefettura di Roma</h2>
+            {% for doc in documents %}
+                <div class="file-item">
+                    <p><strong>Titolo:</strong> {{ doc.title }}</p>
+                    <p><strong>Caricato DA:</strong> {{ doc.office }}</p>
+                    <p><strong>Caricato IL:</strong> {{ doc.timestamp }}</p>
+                    <div class="button-container">
+                        <a href="{{ doc.link }}" target="_blank">
+                            <button class="view-button">Visualizza Documento</button>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Sezione Decreti -->
+        <div class="section">
+            <h2>Decreti della Prefettura di Roma</h2>
+            {% for dec in decrees %}
+                <div class="file-item">
+                    <p><strong>Titolo:</strong> {{ dec.title }}</p>
+                    <p><strong>Caricato DA:</strong> {{ dec.office }}</p>
+                    <p><strong>Caricato IL:</strong> {{ dec.timestamp }}</p>
+                    <div class="button-container">
+                        <a href="{{ dec.link }}" target="_blank">
+                            <button class="view-button">Visualizza Decreto</button>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bottone per tornare alla home page -->
+    <a href="{{ url_for('index') }}">
+        <button class="home-button">Torna alla Home</button>
+    </a>
+</body>
+</html>

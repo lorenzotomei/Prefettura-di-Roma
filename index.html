@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefettura di Roma</title>
+    <style>
+        body {
+            font-family: verdana, sans-serif;
+            background-color: #8cc2ff;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 3em;
+            font-size: 50px;
+            margin: 0;
+        }
+        .main-container {
+            display: flex;
+            width: 100%;
+            height: calc(100vh - 40px); /* Adjust height to fit the view */
+        }
+        .left-column {
+            width: 50%;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+        .right-column {
+            width: 50%;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .links-box, .contacts-box, .image-box {
+            background: #e5f8f7;
+            padding: 15px;
+            border: 3px solid #000000;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .links-box h2, .contacts-box h2, .image-box h2 {
+            margin-top: 0;
+        }
+        .links-box a {
+            display: block;
+            margin: 10px 0;
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+        }
+        .links-box a:hover {
+            text-decoration: underline;
+        }
+        .contacts-box p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .info-box {
+            background: #e5f8f7;
+            font-family: verdana, sans-serif;
+            font-size: 18px;
+            padding: 15px;
+            border: 3px solid #000000;
+            border-radius: 10px;
+            box-sizing: border-box;
+            height: auto;
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Prefettura di Roma</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="left-column">
+            <div class="links-box">
+                <h2>Link Utili:</h2>
+                <a href="{{ url_for('list_files') }}"><em>Accedi all'Albo Pretorio della Prefettura - Cliccami!</em></a>
+                <a href="{{ url_for('login') }}"><em>Carica un Documento/Decreto (Riservato Prefettura) - Cliccami!</em></a>
+            </div>
+            <div class="contacts-box">
+                <h2>Contatti della Prefettura:</h2>
+                <p><strong>Email Prefettura di Roma:</strong> prefetturaromarp@gmail.com</p>
+                <p><strong>Prefetto:</strong> Tim Breadford</p>
+                <p><strong>Vice Prefetto Vicario:</strong> Francesco Franco</p>
+                <p><strong>Vice Prefetto:</strong> Lorenzo Rossi</p>
+                <p><strong>Vice Prefetto Aggiunto:</strong> Giulio Bianchi e Francesco Mangiagatti</p>
+                <p><strong>Ispettori Superiore della Prefettura:</strong> Alberto Cuvullo</p>
+                <p><strong>Ispettore Capo della Prefettura:</strong> Jack Mill</p>
+                <p><strong>Ispettori della Prefettura:</strong> Dave Johnson, Franco Mangiagatti, Giuseppe Russo, Igor Santiago, Mario De Luca, Mario Rossi, Mattia Ferrari, Mya Blackwood, Raffa Campi, Robert Green, Giacomo Serra e Tommaso Carini</p>
+            </div>
+            <div class="image-box">
+                <h2>Immagini:</h2>
+                <img src="https://cdn.discordapp.com/attachments/1271463912759361598/1272940161067515965/immagine_2024-07-26_023335017-transformed_1.png?ex=66bccd68&is=66bb7be8&hm=689bc6935662dd67daad486114ecd10c5ab92e206de0d50894335a5b2020f690&">
+                <img src="https://media.discordapp.net/attachments/1154357061128310794/1272940606598942810/Screenshot_2024-07-26_alle_11.55.22_LE_auto_x2.jpg?ex=66bccdd2&is=66bb7c52&hm=1fdacd51cd04ffa206d20924a3fab9cc3c4f9749a836d2c6cfca523df7a040f3&=&format=webp&width=1218&height=685">
+                <img src="https://media.discordapp.net/attachments/1154357061128310794/1272940612106059907/Screenshot_2024-06-26_alle_23.10.14_LE_auto_x2.jpg?ex=66bccdd4&is=66bb7c54&hm=7213858f32f6292a6b0496728663c3148d2163c7e20a02b5e136f61e3275401e&=&format=webp&width=1440&height=517">
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="info-box">
+                <h2>Informazioni sulla Prefettura</h2>
+                <p><strong>Benvenuti nel sito dell'Albo Pretorio della Prefettura di Roma. Questo sito è dedicato alla pubblicazione e alla consultazione di tutti i documenti ufficiali emessi dalla Prefettura di Roma. L'Albo Pretorio online permette a cittadini, professionisti e istituzioni di accedere facilmente ai documenti e ai decreti pubblicati dalla Prefettura, garantendo trasparenza e accesso alle informazioni di pubblica rilevanza.</strong><br><br>
+                <em>La Prefettura di Roma è l'organo amministrativo che rappresenta il governo centrale nella capitale. Il Prefetto, attualmente il Dott. Ti Breadford, è il massimo responsabile dell'ufficio e coordina le attività della Prefettura. Al suo fianco operano i Vice Prefetti, tra cui il Vice Prefetto Vicario Francesco Franco, il Vice Prefetto Lorenzo Rossi, il Vice Prefetto Aggiunto Giulio Bianchi e Francesco Mangiagatti. Questi funzionari svolgono un ruolo cruciale nel supportare il Prefetto e nella gestione delle attività quotidiane dell'ufficio.</em></p>
+                <p><strong>Uffici della Prefettura:</strong><br>
+                    ・<strong>Ufficio Sicurezza Pubblica:</strong><br>
+                Responsabile: Lorenzo Rossi<br>
+                Vice Responsabile: Giulio Bianchi<br>
+                Dipendenti: Jack Mill, Tommaso Carini, Mattia Ferrari<br>
+                <p><strong>・Ufficio Vigilanza e Controllo:</strong><br>
+                    Direttore: Francesco Mangiagatti<br>
+                    Vice Direttore: Franco Mangiagatti<br>
+                    Ispettore di Vigilanza: Francesco e Robert Green<br>
+                    Collaboratori: N/A<br>
+                <p><strong>・Ufficio Affari Legali:</strong><br>
+                    Direttore: Alberto Cuvullo<br>
+                    Vice Direttore: Giacomo Serra<br>
+                    Avvocati: Giacomo Serra, Mario De Luca e Alberto Cuvullo<br>
+                    Praticante: N/A<br>
+                <p><strong>・Ufficio Gabinetto:</strong><br>
+                 Direttore: Giuseppe Russo<br>
+                 Vice Direttore: Mya Blackwood<br>
+                 Responsabile Comunicazioni: N/A<br>
+                 Dipendenti: Mario Rossi<br>
+                 Addetti Stampa: N/A<br>
+                 Praticanti: N/A<br>
+                 <p><strong>・Ufficio Sicurezza Stradale:</strong><br>
+                Responsabile: Mario De Luca e Raffa Campi<br>
+                Vice Responsabile: Dave Johnson<br>
+                Ispettore di Sicurezza Stradale: N/A<br>
+                Agente di Polizia Stradale: Tommaso Carini<br>
+                <p><strong>・Ufficio Enti Locali:</strong></p> 
+                Direttore: Luca Rodriguez<br>
+                Vice Direttore: Baron<br>
+                Funzionario: Max Rossi<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
